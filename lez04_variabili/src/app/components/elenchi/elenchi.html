@@ -1,0 +1,25 @@
+<h1>Ciao, sai chi ti saluta tantissimo? {{nome}}</h1>
+
+<button (click)="svelaNome()">Non lo so, chi?</button>
+
+<hr />
+
+<h1>Lista ingredienti</h1>
+
+<ul>
+    @for(ingr of ingredienti; track $index){
+        <li>{{ingr}} Indice: {{$index+1}}</li>
+    }
+</ul>
+
+<hr />
+
+<h1>Lista studenti</h1>
+
+<ul>
+    @for(stu of studenti; track stu.id){
+        <li>{{stu.nominativo}} - Matricola: {{stu.matricola}}</li>
+    }
+</ul>
+
+<button (click)="aggiungiStudente()">Aggiungi stud</button>

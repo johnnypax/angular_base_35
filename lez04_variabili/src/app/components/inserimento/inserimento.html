@@ -1,0 +1,20 @@
+<h1>Inserisci un nuovo studente</h1>
+
+<label>Nominativo:</label>
+<input type="text" placeholder="Inserisci valore" [(ngModel)]="inputNominativo">
+
+<br />
+
+<label>Matricola:</label>
+<input type="text" placeholder="Inserisci valore" [(ngModel)]="inputMatricola">
+
+<br />
+
+<button (click)="salvaStudente()">Aggiungi</button>
+
+<h1>Elenco</h1>
+<ul>
+    @for(stu of elenco; track stu.id){
+        <li>{{stu.nominativo}} - Matricola: {{stu.matricola}}</li>
+    }
+</ul>
