@@ -1,0 +1,24 @@
+<h1>Lista film</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Immagine</th>
+            <th>Titolo</th>
+            <th>Descrizione</th>
+            <th>Anno</th>
+            <th>Regista</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(film of listaFilm; track film.id){
+            <tr>
+                <td>{{film.immagine}}</td>
+                <td>{{film.titolo}}</td>
+                <td>{{film.descrizione}}</td>
+                <td>{{film.anno}}</td>
+                <td>{{film.regista}}</td>
+            </tr>
+        }
+    </tbody>
+</table>
