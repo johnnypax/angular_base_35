@@ -1,0 +1,27 @@
+<h1>Inserimento</h1>
+<div class="form-group">
+    <label for="">Immagine</label>
+    <input type="text" class="form-control" [(ngModel)]="inputImg" placeholder="Inserisci il valore" />
+</div>
+
+<div class="form-group">
+    <label for="">Titolo</label>
+    <input type="text" class="form-control" [(ngModel)]="inputTitolo" placeholder="Inserisci il valore" />
+</div>
+
+<div class="form-group">
+    <label for="">Descrizione</label>
+    <textarea class="form-control" [(ngModel)]="inputDesc" ></textarea>
+</div>
+
+<div class="form-group">
+    <label for="">Anno</label>
+    <input type="number" min="1900" max="2500" class="form-control" [(ngModel)]="inputAnno" placeholder="Inserisci il valore" />
+</div>
+
+<div class="form-group">
+    <label for="">Regista</label>
+    <input type="text" class="form-control" [(ngModel)]="inputRegista" placeholder="Inserisci il valore" />
+</div>
+
+<button class="btn btn-primary" (click)="salvaFilm()">Inserisci</button>
