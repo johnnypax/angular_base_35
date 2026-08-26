@@ -12,6 +12,12 @@ export class Lista {
 
   listaFilm: Film[] = []
 
+  // private services: FilmService | undefined
+  
+  // constructor(serviceFilm: FilmService){ 
+  //   this.serviceFilm = serviceFilm
+  // }
+
   constructor(private serviceFilm: FilmService){ }
 
   ngOnInit(){
