@@ -12,7 +12,9 @@
     <tbody>
         @for(cve of elenco; track cve.id){
             <tr>
-                <td>{{ cve.descrizione }}</td>
+                <td>
+                    <a href="/cve/{{ cve.id }}">{{ cve.descrizione }}</a>
+                </td>
                 <td>{{ cve.data_scoperta }}</td>
                 <td>{{ cve.vettore }}</td>
                 <td>
