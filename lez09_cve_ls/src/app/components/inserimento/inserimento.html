@@ -1,0 +1,18 @@
+<h1>Inserisci la CVE</h1>
+
+<div class="form-group">
+    <label for="">Descrizione</label>
+    <input type="text" class="form-control" [(ngModel)]="input_desc" />
+</div>
+
+<div class="form-group">
+    <label for="">Data</label>
+    <input type="date" class="form-control" [(ngModel)]="input_date" />
+</div>
+
+<div class="form-group">
+    <label for="">Vettore</label>
+    <input type="text" class="form-control" [(ngModel)]="input_vect" />
+</div>
+
+<button class="btn btn-primary" (click)="salva()">Salva</button>

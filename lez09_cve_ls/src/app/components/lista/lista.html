@@ -1,0 +1,24 @@
+<h1>Lista CVE</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Descrizione</th>
+            <th>Data scoperta</th>
+            <th>Vector</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(cve of elenco; track cve.id){
+            <tr>
+                <td>{{ cve.descrizione }}</td>
+                <td>{{ cve.data_scoperta }}</td>
+                <td>{{ cve.vettore }}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="elimina(cve.id)">Elmina</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
