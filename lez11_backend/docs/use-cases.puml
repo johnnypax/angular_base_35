@@ -1,0 +1,47 @@
+@startuml
+left to right direction
+actor "Applicazione Frontend" as Frontend
+
+rectangle "Backend Path/POI API" {
+  usecase "Visualizzare tutti i POI" as UC1
+  usecase "Visualizzare dettaglio POI" as UC2
+  usecase "Visualizzare POI completo\ncon Path associati" as UC3
+  usecase "Creare POI" as UC4
+  usecase "Modificare POI" as UC5
+  usecase "Eliminare POI" as UC6
+
+  usecase "Visualizzare tutti i Path" as UC7
+  usecase "Visualizzare dettaglio Path" as UC8
+  usecase "Visualizzare Path completo\ncon POI associati" as UC9
+  usecase "Creare Path" as UC10
+  usecase "Modificare Path" as UC11
+  usecase "Eliminare Path" as UC12
+  usecase "Associare POI a Path" as UC13
+  usecase "Gestire categorie di Path" as UC14
+  usecase "Validare almeno un POI" as UC15
+  usecase "Verificare health" as UC16
+}
+
+Frontend --> UC1
+Frontend --> UC2
+Frontend --> UC3
+Frontend --> UC4
+Frontend --> UC5
+Frontend --> UC6
+Frontend --> UC7
+Frontend --> UC8
+Frontend --> UC9
+Frontend --> UC10
+Frontend --> UC11
+Frontend --> UC12
+Frontend --> UC16
+
+UC10 .> UC13 : <<include>>
+UC10 .> UC14 : <<include>>
+UC10 .> UC15 : <<include>>
+UC11 .> UC13 : <<include>>
+UC11 .> UC14 : <<include>>
+UC11 .> UC15 : <<include>>
+UC3 .> UC2 : <<extend>>
+UC9 .> UC8 : <<extend>>
+@enduml
