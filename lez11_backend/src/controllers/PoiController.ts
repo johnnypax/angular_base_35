@@ -17,11 +17,19 @@ export class PoiController {
   };
 
   getById = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-    try { res.json(await this.service.getById(parseId(req.params.id))); } catch (e) { next(e); }
+    const id = Array.isArray(req.params.id)
+                    ? req.params.id[0]
+                    : req.params.id
+    
+    try { res.json(await this.service.getById(parseId(id))); } catch (e) { next(e); }
   };
 
   getFull = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-    try { res.json(await this.service.getById(parseId(req.params.id), true)); } catch (e) { next(e); }
+    const id = Array.isArray(req.params.id)
+                    ? req.params.id[0]
+                    : req.params.id
+    
+    try { res.json(await this.service.getById(parseId(id), true)); } catch (e) { next(e); }
   };
 
   create = async (req: Request<unknown, unknown, PoiPayload>, res: Response, next: NextFunction): Promise<void> => {
@@ -33,6 +41,10 @@ export class PoiController {
   };
 
   delete = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-    try { await this.service.delete(parseId(req.params.id)); res.status(204).send(); } catch (e) { next(e); }
+    const id = Array.isArray(req.params.id)
+                    ? req.params.id[0]
+                    : req.params.id
+    
+    try { await this.service.delete(parseId(id)); res.status(204).send(); } catch (e) { next(e); }
   };
 }
