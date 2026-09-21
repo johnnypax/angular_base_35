@@ -1,13 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Mappa } from './components/mappa/mappa';
 
 @Component({
-  imports: [RouterOutlet, Mappa],
+  imports: [RouterOutlet],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('lez11_percorsi');
+  protected readonly title = signal('lez11_mappe');
 }
